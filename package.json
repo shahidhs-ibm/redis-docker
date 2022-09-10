@@ -1,0 +1,23 @@
+{
+  "name": "tutorial",
+  "version": "1.0.0",
+  "main": "01_Globals.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praTHM23/Node-Express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praTHM23/Node-Express/issues"
+  },
+  "homepage": "https://github.com/praTHM23/Node-Express#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
