@@ -32,7 +32,7 @@ const start = async()=>{
         const second =await getdata('./content/second.txt')
         console.log(first,second)
     } catch (error) {
-        console.log(err)
+        console.log(error)
     }
 }
 
