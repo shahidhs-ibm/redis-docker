@@ -6,6 +6,7 @@ const homeStyles = readFileSync('./Navbar-app/style.css')
 const homeLogic = readFileSync('./Navbar-app/browser-app.js')
 const server =http.createServer((req,res)=>{
     const url=req.url
+    console.log(req.method)
     if(url==='/')
     {
     res.writeHead(200,{'content-type':'text/html'})
