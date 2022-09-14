@@ -4,7 +4,7 @@ const mongoose=require("mongoose")
 const routes=require('./Routes/Peopleroutes.js')
 const bookroutes=require('./Routes/BookRoutes.js')
 
-mongoose.connect("mongodb+srv://Pratham23:XP8BKurjLMuoPwZF@Book.mongodb.net/Book?retryWrites=true&w=majority",{
+mongoose.connect("mongodb://localhost:27017/Books",{
   useNewUrlParser:true,
   useFindAndModify:false,
 //  useUnifieTopology:true
@@ -19,6 +19,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 app.use('/api/people',routes)
+
+
 app.use('/book',bookroutes)
 
 

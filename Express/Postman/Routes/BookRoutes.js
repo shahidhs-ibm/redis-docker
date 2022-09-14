@@ -1,25 +1,21 @@
 const express = require('express')
 const bookrouter=express.Router()
+const {
+  GetBook,
+  updatebook,
+  createBook,
+  deletebook,
+  serachBook
+} = require('../controllers/BookController')
 
+  bookrouter.get('/',GetBook)
 
-  bookrouter.get('/',(req,res)=>{
-    res.send("all books")
-  })
+  bookrouter.post('/',createBook)
 
-  bookrouter.post('/',(req,res)=>{
-    res.json({data : "book is stored"})
-  })
+  bookrouter.get('/:id',serachBook)
 
-  bookrouter.get('/:id',(req,res)=>{
-    res.send(`single book of ID:${req.params.id}`)
-  })
+  bookrouter.patch('/:id',updatebook)
 
-  bookrouter.patch('/:id',(req,res)=>{
-    res.send(`single book of ID:${req.params.id}  to update`)
-  })
-
-  bookrouter.patch('/:id',(req,res)=>{
-    res.send(`single book of ID:${req.params.id}  to delete`)
-  })
+  bookrouter.delete('/:id',deletebook)
 
   module.exports = bookrouter
