@@ -4,16 +4,30 @@ const axios=require('axios');
 const Redis =require('redis');
 const { json } = require('express');
 
-const port=process.env.PORT || 3000
+const port=8080
 
 // const fetchApiData= async()=>{
 //     const data=await axios.get('https://api.covidtracking.com/v1/states/current.json')
 //     console.log("api req sned")
-//     return data
+//     return dat
 // }
+const redisClinet=Redis.createClient(
+  
+  {
 
-const redisClinet=Redis.createClient()
-app.get('/coronadata',async(req,res)=>{
+
+
+    host: '172.18.0.2',
+      port: '6379'
+  // socket: {
+  //     host: '172.18.0.2',
+  //     port: '6379'
+  // }
+}
+)
+
+
+app.get('/',async(req,res)=>{
   
   redisClinet.get('coronadata',async(err,cdata)=>{
     if(err) console.error();
@@ -35,5 +49,6 @@ app.get('/coronadata',async(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log(`App listening on port ${port}`)
+    console.log(`App hfjhdfjfdjdfhj listening on port ${port}`);
+
 })
