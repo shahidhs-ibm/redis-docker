@@ -21,7 +21,7 @@ app.use(express.json())
 app.use('/api/people',routes)
 
 
-app.use('/book',bookroutes)
+app.use('/api/book',bookroutes)
 
 
 app.get('/',(req,res)=>{

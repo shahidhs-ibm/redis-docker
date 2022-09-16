@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-const BookSchema =new mongoose.Schema({
+const BookSchema =new mongoose.Schema({ //creating instance of mongoose schema
 
     BookName:{
         type:String,
