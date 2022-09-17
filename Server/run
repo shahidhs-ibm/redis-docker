@@ -1,14 +1,7 @@
 docker network create "my-net" ;
 docker network inspect my-net > networkdetails ;
 echo created network ;
-docker build -t final . ;
+docker build -t server . ;
+docker run -d --network my-net --network-alias red-server server ;
 
-
-
-
-
-# docker run -dp  8080:6379 --network my-net --network-alias red-server final ;
-
-
-# echo created server ;
-# docker run -it -p 3000:3000 --network my-net -e REDIS-HOST=red-server ubuntu
+#add the optional -p 8080:6379 if you want to expose the redis port to host (in run command)
