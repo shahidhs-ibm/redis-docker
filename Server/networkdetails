@@ -1,8 +1,8 @@
 [
     {
         "Name": "my-net",
-        "Id": "d631ddeda70c9759789699d40f7ce48038d7b92a74ca399b234ef1386db511f0",
-        "Created": "2022-09-16T08:39:57.542784299Z",
+        "Id": "8dcbda9dddb0245c0aec1e0427415550ce2794a06eebb29efeae2e6e99e32754",
+        "Created": "2022-09-16T17:27:41.319816937Z",
         "Scope": "local",
         "Driver": "bridge",
         "EnableIPv6": false,

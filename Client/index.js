@@ -12,17 +12,9 @@ const port=8080
 //     return dat
 // }
 const redisClinet=Redis.createClient(
-  
   {
-
-
-
-    host: '172.18.0.2',
+    host: '127.18.0.2',
       port: '6379'
-  // socket: {
-  //     host: '172.18.0.2',
-  //     port: '6379'
-  // }
 }
 )
 
