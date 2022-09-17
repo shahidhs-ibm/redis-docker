@@ -39,10 +39,12 @@ app.get('/', async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`App hfjhdfjfdjdfhj listening on port ${port}`);
-
+  console.log(`App listening on port ${port}`);
 })
 
+
+
+// This function lets u exit the container by exiting node when u press Ctrl+C
 process.on('SIGINT', function () {
   console.log("\nGracefully shutting down from SIGINT (Ctrl-C)");
   // some other closing procedures go here

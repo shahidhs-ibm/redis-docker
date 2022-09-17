@@ -1,7 +1,7 @@
-FROM node
+FROM node:alpine
 COPY . /app
 WORKDIR /app
 EXPOSE 8080
-RUN apt update 
+RUN apk update 
 RUN npm i
 CMD ["node", "index.js"]
