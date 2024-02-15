@@ -16,9 +16,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image for Server....
-      run: cd Server
-      run: ./sh
+      run: |
+      cd Server
+      ./sh
 
     - name: Build the Docker image for Client....
-      run: cd Client
-      run: ./sh
+      run: |
+      cd Client
+      ./sh
