@@ -35,12 +35,13 @@ jobs:
     steps:
       - name: Run commands
         run: |
-          export NODE_VERSION=${NODE_VERSION:-16}
-          sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-          sudo source "$HOME"/.bashrc
-          echo "installing nodejs $NODE_VERSION"
-          nvm install "$NODE_VERSION" >/dev/null
-          nvm use $NODE_VERSION
+          apt install -y curl
+          curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+          export NVM_DIR="$HOME/.nvm"
+          [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+          [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+          nvm install 14.17.5
+          node -v
           cd Client
           npm ci
           npm run build --if-present
