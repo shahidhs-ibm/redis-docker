@@ -1,41 +1,41 @@
-# name: Docker Image CI
+name: Docker Image CI
 
-# on:
-#   push:
-#     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
-#   workflow_dispatch:
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
 
-# jobs:
+jobs:
 
-#   amd_job:
-#     name: AMD Job
-#     runs-on: ubuntu-latest
+  amd_job:
+    name: AMD Job
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Build the Docker image for Server....
-#       run: |
-#         cd Server
-#         ./sh
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image for Server....
+      run: |
+        cd Server
+        ./sh
 
-#     - name: Build the Docker image for Client....
-#       run: |
-#         cd Client
-#         ./sh
-#   power_job:
-#     name: Power Job
-#     runs-on: ubuntu-22.04-ppc64le
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Build the Docker image for Server....
-#       run: |
-#         sudo chmod 666 /var/run/docker.sock
-#         cd Server
-#         ./sh
+    - name: Build the Docker image for Client....
+      run: |
+        cd Client
+        ./sh
+  power_job:
+    name: Power Job
+    runs-on: ubuntu-22.04-ppc64le
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image for Server....
+      run: |
+        sudo chmod 666 /var/run/docker.sock
+        cd Server
+        ./sh
 
-#     - name: Build the Docker image for Client....
-#       run: |
-#         cd Client
-#         ./sh
+    - name: Build the Docker image for Client....
+      run: |
+        cd Client
+        ./sh
